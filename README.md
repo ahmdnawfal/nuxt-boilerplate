@@ -54,19 +54,11 @@ Example:
 ```ts
 import { defineStore } from 'pinia';
 import type { ApiCallbacks, ApiError } from '~/types/api';
-
-type Post = {
-  id: number;
-  title: string;
-  body: string;
-  userId: number;
-};
-
-type PostPayload = Omit<Post, 'id'>;
+import type { TPost, TPostPayload } from '~/types/post';
 
 export const usePostStore = defineStore('post', {
   state: () => ({
-    data: [] as Post[],
+    data: [] as TPost[],
     isLoading: true,
     error: null as ApiError | null,
   }),
@@ -77,7 +69,7 @@ export const usePostStore = defineStore('post', {
       this.isLoading = true;
       this.error = null;
 
-      await api.get<Post[]>('/posts', {
+      await api.get<TPost[]>('/posts', {
         onSuccess: (res) => {
           this.data = res;
         },
@@ -90,10 +82,10 @@ export const usePostStore = defineStore('post', {
       });
     },
 
-    async addPost(payload: PostPayload, callbacks: ApiCallbacks<Post> = {}) {
+    async addPost(payload: TPostPayload, callbacks: ApiCallbacks<TPost> = {}) {
       const api = useApi();
 
-      await api.post<Post>('/posts', {
+      await api.post<TPost>('/posts', {
         data: payload,
         onSuccess: (res) => {
           callbacks.onSuccess?.(res);
@@ -141,23 +133,14 @@ This approach is ideal for SEO and provides a faster "time-to-content" for users
 
 ```vue
 <script setup lang="ts">
-interface User {
-  id: number;
-  name: string;
-}
+import type { TUser } from '~/types/user';
 
-// Assuming `useSsrFetch` is a project-specific wrapper around useFetch
-// The principles are the same for Nuxt's `useFetch`
 const {
   data: users,
   pending,
   error,
-} = await useSsrFetch<User[]>('/users', {
-  // A unique key to prevent fetching the same data more than once.
+} = await useSsrFetch<TUser[]>('/users', {
   key: 'users',
-
-  // Provides a default value while data is loading to prevent errors.
-  // Use a factory function `() => []` for non-primitive types.
   default: () => [],
 });
 </script>

@@ -1,18 +1,10 @@
 import { defineStore } from 'pinia';
 import type { ApiCallbacks, ApiError } from '~/types/api';
-
-type Post = {
-  id: number;
-  title: string;
-  body: string;
-  userId: number;
-};
-
-type PostPayload = Omit<Post, 'id'>;
+import type { TPost, TPostPayload } from '~/types/post';
 
 export const usePostStore = defineStore('post', {
   state: () => ({
-    data: [] as Post[],
+    data: [] as TPost[],
     isLoading: true,
     error: null as ApiError | null,
   }),
@@ -23,7 +15,7 @@ export const usePostStore = defineStore('post', {
       this.isLoading = true;
       this.error = null;
 
-      await api.get<Post[]>('/posts', {
+      await api.get<TPost[]>('/posts', {
         onSuccess: (res) => {
           this.data = res;
         },
@@ -36,10 +28,10 @@ export const usePostStore = defineStore('post', {
       });
     },
 
-    async addPost(payload: PostPayload, callbacks: ApiCallbacks<Post> = {}) {
+    async addPost(payload: TPostPayload, callbacks: ApiCallbacks<TPost> = {}) {
       const api = useApi();
 
-      await api.post<Post>('/posts', {
+      await api.post<TPost>('/posts', {
         data: payload,
         onSuccess: (res) => {
           callbacks.onSuccess?.(res);

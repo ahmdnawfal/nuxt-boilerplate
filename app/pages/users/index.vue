@@ -1,14 +1,11 @@
 <script setup lang="ts">
-interface User {
-  id: number;
-  name: string;
-}
+import type { TUser } from '~/types/user';
 
 const {
   data: users,
   pending,
   error,
-} = await useSsrFetch<User[]>('/users', {
+} = await useSsrFetch<TUser[]>('/users', {
   key: 'users',
   default: () => [],
 });
