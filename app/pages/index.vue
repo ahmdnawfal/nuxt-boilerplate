@@ -1,3 +1,10 @@
+<script setup lang="ts">
+const router = useRouter();
+const navigateTo = (path: string) => {
+  router.push(path);
+};
+</script>
+
 <template>
   <div class="min-h-screen bg-gray-50 flex items-center justify-center px-4">
     <div class="max-w-3xl w-full rounded-2xl p-8 text-center">
@@ -120,10 +127,3 @@
     </div>
   </div>
 </template>
-
-<script setup lang="ts">
-const router = useRouter();
-const navigateTo = (path: string) => {
-  router.push(path);
-};
-</script>

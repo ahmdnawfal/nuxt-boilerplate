@@ -86,14 +86,14 @@ export default withNuxt({
 
     // Airbnb-like rules
     'no-console': 'warn',
-    'no-unused-vars': ['warn', { argsIgnorePattern: '^_' }],
+    'no-unused-vars': ['error', { argsIgnorePattern: '^_' }],
     'comma-dangle': ['error', 'always-multiline'],
     'object-curly-spacing': ['error', 'always'],
     semi: ['error', 'always'],
     quotes: ['error', 'single'],
     indent: 'off',
     'import/no-extraneous-dependencies': 'off',
-    '@typescript-eslint/no-unused-vars': ['warn', { argsIgnorePattern: '^_' }],
+    '@typescript-eslint/no-unused-vars': ['error', { argsIgnorePattern: '^_' }],
     '@typescript-eslint/no-explicit-any': 'off',
     '@typescript-eslint/explicit-module-boundary-types': 'off',
     'vue/html-indent': 'off',
