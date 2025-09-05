@@ -1,5 +1,9 @@
 <script setup>
 const { postStore, addPost, isLoadingAdd } = usePosts();
+
+onMounted(() => {
+  postStore.fetchPosts();
+});
 </script>
 
 <template>

@@ -26,10 +26,6 @@ export function usePosts() {
     });
   };
 
-  onMounted(() => {
-    postStore.fetchPosts();
-  });
-
   return {
     postStore,
     addPost,
