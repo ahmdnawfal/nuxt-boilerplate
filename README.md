@@ -1,14 +1,13 @@
-# Nuxt 3 Codebase Starter
+# Nuxt 4 Codebase Starter
 
-This project is a Nuxt 3 starter codebase configured with commonly used modules and conventions to help you build modern frontend applications quickly and efficiently.
+This project is a Nuxt 4 starter codebase configured with commonly used modules and conventions to help you build modern frontend applications quickly and efficiently.
 
 ## 🧰 Tech Stack
 
-- [Nuxt 3](https://nuxt.com)
+- [Nuxt 4](https://nuxt.com)
 - [Pinia](https://pinia.vuejs.org/)
 - [Tailwind CSS](https://tailwindcss.com/)
 - [Nuxt Image](https://image.nuxt.com/)
-- [Nuxt Scripts](https://github.com/nuxt-modules/scripts)
 - [Nuxt Fonts](https://github.com/nuxt-modules/fonts)
 - [Nuxt Icon](https://github.com/nuxt-modules/icon)
 - [Nuxt ESLint Module](https://github.com/nuxt-modules/eslint) using **Airbnb Style Guide**
@@ -20,29 +19,29 @@ This project is a Nuxt 3 starter codebase configured with commonly used modules 
 
 ## 🧱 Code Structure & Conventions
 
-### 📁 `components/pages/*`
+### 📁 `app/components/pages/*`
 
-Page-level components should be placed under `components/pages`.
+Page-level components should be placed under `app/components/pages`.
 
 > 📌 **Note:** Component filenames should use **multiword names** to avoid conflicts with native HTML elements and improve readability.
 
 ✅ Recommended:
-`components/pages/about/AboutBanner.vue`
-`components/pages/home/HomeHero.vue`
+`app/components/pages/about/AboutBanner.vue`
+`app/components/pages/home/HomeHero.vue`
 
 ❌ Avoid:
-`components/pages/about/banner.vue`
-`components/pages/home/hero.vue`
+`app/components/pages/about/banner.vue`
+`app/components/pages/home/hero.vue`
 
 This aligns with [Vue Style Guide – Rule: Multi-word component names](https://vuejs.org/style-guide/rules-essential.html#multi-word-component-names).
 
 ---
 
-### 📁 `stores/*`
+### 📁 `app/stores/*`
 
 All API calls are handled inside **Pinia stores** under the `stores` directory.
 
-Example: `stores/usePostStore.ts`
+Example: `app/stores/usePostStore.ts`
 
 Each store should at least contain:
 
@@ -113,7 +112,7 @@ export const usePostStore = defineStore('post', {
 
 ---
 
-### 📁 `composables/*`
+### 📁 `app/composables/*`
 
 For reusable logic between pages/components, use the `composables` directory.
 

@@ -26,7 +26,7 @@ export default withNuxt({
       parser: parserTs,
       ecmaVersion: 'latest',
       sourceType: 'module',
-      project: true,
+      project: ['./tsconfig.eslint.json'],
       tsconfigRootDir: process.cwd(),
     },
     globals: {

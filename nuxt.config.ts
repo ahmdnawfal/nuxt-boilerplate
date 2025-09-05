@@ -8,7 +8,6 @@ export default defineNuxtConfig({
   modules: [
     '@nuxt/eslint',
     '@nuxt/image',
-    '@nuxt/scripts',
     '@nuxt/fonts',
     '@nuxt/icon',
     '@pinia/nuxt',
@@ -19,7 +18,7 @@ export default defineNuxtConfig({
     },
   },
   imports: {
-    dirs: ['composables'],
+    dirs: ['~/composables'],
   },
   vite: {
     plugins: [

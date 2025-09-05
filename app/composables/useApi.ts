@@ -1,5 +1,5 @@
 import { AxiosError } from 'axios';
-import type { ApiOptions, ApiError } from '~/types/api'; // Pastikan ApiError didefinisikan di sini
+import type { ApiOptions, ApiError } from '~/types/api';
 
 export const useApi = () => {
   const { $axios } = useNuxtApp();

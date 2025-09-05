@@ -2,10 +2,10 @@
   <div class="min-h-screen bg-gray-50 flex items-center justify-center px-4">
     <div class="max-w-3xl w-full rounded-2xl p-8 text-center">
       <h1 class="text-5xl font-bold text-blue-600 mb-6">
-        Nuxt 3 Codebase Starter
+        Nuxt 4 Codebase Starter
       </h1>
       <p class="text-gray-600 text-lg mb-6">
-        This project is a Nuxt 3 starter codebase configured with commonly used
+        This project is a Nuxt 4 starter codebase configured with commonly used
         modules and conventions to help you build modern frontend applications
         quickly and efficiently.
       </p>
@@ -19,7 +19,7 @@
             href="https://nuxt.com"
             target="_blank"
             class="text-blue-600 hover:underline"
-            >Nuxt 3</a
+            >Nuxt 4</a
           >
         </li>
         <li>
@@ -44,14 +44,6 @@
             target="_blank"
             class="text-blue-600 hover:underline"
             >Nuxt Image</a
-          >
-        </li>
-        <li>
-          <a
-            href="https://github.com/nuxt-modules/scripts"
-            target="_blank"
-            class="text-blue-600 hover:underline"
-            >Nuxt Scripts</a
           >
         </li>
         <li>
