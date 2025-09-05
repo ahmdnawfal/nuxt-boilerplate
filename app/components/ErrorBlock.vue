@@ -7,13 +7,22 @@ const props = defineProps<{
 
 const defaultImage = '/error-default.svg';
 const image = computed(() => props.image || defaultImage);
+const isSvg = computed(() => image.value.endsWith('.svg'));
 </script>
 
 <template>
   <div
     class="min-h-screen overflow-hidden flex flex-col justify-center items-center text-center px-6 bg-white dark:bg-gray-900"
   >
+    <img
+      v-if="isSvg"
+      :src="image"
+      alt="Error illustration"
+      class="w-52 h-auto mb-6 opacity-80"
+    />
+
     <NuxtImg
+      v-else
       :src="image"
       alt="Error illustration"
       class="w-52 h-auto mb-6 opacity-80"
