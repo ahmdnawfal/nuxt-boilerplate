@@ -1,6 +1,7 @@
 import { ref } from 'vue';
 
 export function usePosts() {
+  const api = useApi();
   const postStore = usePostStore();
   const isLoadingAdd = ref(false);
 
@@ -17,8 +18,8 @@ export function usePosts() {
       onSuccess: (res) => {
         postStore.data.unshift(res);
       },
-      onError: (_err) => {
-        // console.error('Error adding post:', err);
+      onError: (err) => {
+        api.handleError(err);
       },
       onSettled: () => {
         isLoadingAdd.value = false;

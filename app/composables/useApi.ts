@@ -45,12 +45,24 @@ export const useApi = () => {
         };
       }
 
-      onError?.(error);
+      handleError(error);
     } finally {
       onSettled?.();
     }
 
     return result;
+  }
+
+  function handleError(error: ApiError, onError?: (error: ApiError) => void) {
+    if (error.statusCode === 404 || error.statusCode === 500) {
+      throw showError(error);
+    }
+    // else if (error.statusCode == 400) {
+
+    // }
+    else {
+      onError?.(error);
+    }
   }
 
   return {
@@ -60,5 +72,6 @@ export const useApi = () => {
     put: <T>(url: string, opts?: ApiOptions<T>) => request<T>('put', url, opts),
     delete: <T>(url: string, opts?: ApiOptions<T>) =>
       request<T>('delete', url, opts),
+    handleError,
   };
 };
