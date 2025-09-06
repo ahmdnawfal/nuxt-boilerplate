@@ -1,4 +1,6 @@
 <script setup lang="ts">
+import { Button } from '~/components/ui';
+
 const { postStore, addPost, isLoadingAdd } = usePosts();
 
 onMounted(() => {
@@ -11,13 +13,9 @@ onMounted(() => {
     <div class="max-w-2xl mx-auto px-4 py-8">
       <h1 class="text-2xl font-bold mb-4">List Posts</h1>
 
-      <button
-        class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 transition mb-6"
-        :disabled="isLoadingAdd"
-        @click="addPost"
-      >
+      <Button class="mb-4" :disabled="isLoadingAdd" @click="addPost">
         Add Post {{ isLoadingAdd ? '...' : '' }}
-      </button>
+      </Button>
 
       <ul class="space-y-4">
         <li

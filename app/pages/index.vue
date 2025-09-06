@@ -1,4 +1,6 @@
 <script setup lang="ts">
+import { Button } from '~/components/ui';
+
 const router = useRouter();
 const navigateTo = (path: string) => {
   router.push(path);
@@ -8,7 +10,7 @@ const navigateTo = (path: string) => {
 <template>
   <div class="min-h-screen bg-gray-50 flex items-center justify-center px-4">
     <div class="max-w-3xl w-full rounded-2xl p-8 text-center">
-      <h1 class="text-5xl font-bold text-blue-600 mb-6">
+      <h1 class="text-5xl font-bold text-primary mb-6">
         Nuxt 4 Codebase Starter
       </h1>
       <p class="text-gray-600 text-lg mb-6">
@@ -17,7 +19,7 @@ const navigateTo = (path: string) => {
         quickly and efficiently.
       </p>
 
-      <h2 class="text-2xl font-semibold text-gray-800 mb-4">🧰 Tech Stack</h2>
+      <h2 class="text-2xl font-semibold text-gray-800 mb-4">Tech Stack</h2>
       <ul
         class="list-disc list-inside text-left mx-auto max-w-md text-gray-700 space-y-2"
       >
@@ -25,7 +27,7 @@ const navigateTo = (path: string) => {
           <a
             href="https://nuxt.com"
             target="_blank"
-            class="text-blue-600 hover:underline"
+            class="text-primary hover:underline"
             >Nuxt 4</a
           >
         </li>
@@ -33,7 +35,7 @@ const navigateTo = (path: string) => {
           <a
             href="https://pinia.vuejs.org/"
             target="_blank"
-            class="text-blue-600 hover:underline"
+            class="text-primary hover:underline"
             >Pinia</a
           >
         </li>
@@ -41,7 +43,7 @@ const navigateTo = (path: string) => {
           <a
             href="https://tailwindcss.com/"
             target="_blank"
-            class="text-blue-600 hover:underline"
+            class="text-primary hover:underline"
             >Tailwind CSS</a
           >
         </li>
@@ -49,7 +51,7 @@ const navigateTo = (path: string) => {
           <a
             href="https://image.nuxt.com/"
             target="_blank"
-            class="text-blue-600 hover:underline"
+            class="text-primary hover:underline"
             >Nuxt Image</a
           >
         </li>
@@ -57,7 +59,7 @@ const navigateTo = (path: string) => {
           <a
             href="https://github.com/nuxt-modules/fonts"
             target="_blank"
-            class="text-blue-600 hover:underline"
+            class="text-primary hover:underline"
             >Nuxt Fonts</a
           >
         </li>
@@ -65,7 +67,7 @@ const navigateTo = (path: string) => {
           <a
             href="https://github.com/nuxt-modules/icon"
             target="_blank"
-            class="text-blue-600 hover:underline"
+            class="text-primary hover:underline"
             >Nuxt Icon</a
           >
         </li>
@@ -73,7 +75,7 @@ const navigateTo = (path: string) => {
           <a
             href="https://github.com/nuxt-modules/eslint"
             target="_blank"
-            class="text-blue-600 hover:underline"
+            class="text-primary hover:underline"
             >ESLint Module (Airbnb Style)</a
           >
         </li>
@@ -81,14 +83,14 @@ const navigateTo = (path: string) => {
           <a
             href="https://typicode.github.io/husky/"
             target="_blank"
-            class="text-blue-600 hover:underline"
+            class="text-primary hover:underline"
             >Husky</a
           >
           +
           <a
             href="https://github.com/okonet/lint-staged"
             target="_blank"
-            class="text-blue-600 hover:underline"
+            class="text-primary hover:underline"
             >lint-staged</a
           >
         </li>
@@ -96,7 +98,7 @@ const navigateTo = (path: string) => {
           <a
             href="https://prettier.io/"
             target="_blank"
-            class="text-blue-600 hover:underline"
+            class="text-primary hover:underline"
             >Prettier</a
           >
         </li>
@@ -104,25 +106,17 @@ const navigateTo = (path: string) => {
           <a
             href="https://github.com/commitizen/cz-cli"
             target="_blank"
-            class="text-blue-600 hover:underline"
+            class="text-primary hover:underline"
             >Commitizen</a
           >
         </li>
       </ul>
 
       <div class="mt-8 flex justify-center gap-4">
-        <button
-          class="bg-blue-500 hover:bg-blue-600 text-white font-semibold px-4 py-2 rounded-xl transition cursor-pointer"
-          @click="navigateTo('/posts')"
+        <Button size="md" @click="navigateTo('/posts')">Go to CSR Page</Button>
+        <Button size="md" variant="secondary" @click="navigateTo('/users')"
+          >Go to SSR Page</Button
         >
-          🔁 Go to CSR Page
-        </button>
-        <button
-          class="bg-green-500 hover:bg-green-600 text-white font-semibold px-4 py-2 rounded-xl transition cursor-pointer"
-          @click="navigateTo('/users')"
-        >
-          📦 Go to SSR Page
-        </button>
       </div>
     </div>
   </div>

@@ -12,6 +12,10 @@ export default defineNuxtConfig({
     '@nuxt/icon',
     '@pinia/nuxt',
   ],
+  fonts: {
+    provider: 'google',
+    experimental: { processCSSVariables: true, disableLocalFallbacks: false },
+  },
   runtimeConfig: {
     public: {
       apiBase: process.env.API_BASE || 'https://jsonplaceholder.typicode.com',
