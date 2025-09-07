@@ -2,6 +2,15 @@
 import { Button, Input } from '~/components/ui';
 
 const input = ref<string>('');
+const { show } = useToast();
+
+const triggerToast = () => {
+  show({
+    type: 'success',
+    title: 'Title',
+    description: 'Description',
+  });
+};
 </script>
 
 <template>
@@ -12,7 +21,7 @@ const input = ref<string>('');
     </div>
     <div class="flex flex-col">
       <label>Button</label>
-      <Button>Button</Button>
+      <Button @click="triggerToast()">Trigger Toast</Button>
     </div>
   </div>
 </template>
