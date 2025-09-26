@@ -9,7 +9,6 @@ This project is a Nuxt 4 starter codebase configured with commonly used modules 
 - [Tailwind CSS](https://tailwindcss.com/)
 - [Nuxt Image](https://image.nuxt.com/)
 - [Nuxt Fonts](https://github.com/nuxt-modules/fonts)
-- [Nuxt Icon](https://github.com/nuxt-modules/icon)
 - [Nuxt ESLint Module](https://github.com/nuxt-modules/eslint) using **Airbnb Style Guide**
 - [Husky](https://typicode.github.io/husky/) and [lint-staged](https://github.com/okonet/lint-staged) for Git hooks
 - [Prettier](https://prettier.io/) for code formatting

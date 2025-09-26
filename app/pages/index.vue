@@ -63,14 +63,6 @@ const navigateTo = (path: string) => {
         </li>
         <li>
           <a
-            href="https://github.com/nuxt-modules/icon"
-            target="_blank"
-            class="text-primary hover:underline"
-            >Nuxt Icon</a
-          >
-        </li>
-        <li>
-          <a
             href="https://github.com/nuxt-modules/eslint"
             target="_blank"
             class="text-primary hover:underline"
@@ -111,10 +103,8 @@ const navigateTo = (path: string) => {
       </ul>
 
       <div class="mt-8 flex justify-center gap-4">
-        <button size="md" @click="navigateTo('/posts')">Go to CSR Page</button>
-        <button size="md" variant="secondary" @click="navigateTo('/users')">
-          Go to SSR Page
-        </button>
+        <UButton @click="navigateTo('/posts')">Go to CSR Page</UButton>
+        <UButton @click="navigateTo('/users')">Go to SSR Page </UButton>
       </div>
     </div>
   </div>
