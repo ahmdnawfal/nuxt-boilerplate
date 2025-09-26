@@ -58,6 +58,7 @@
     "postcss": "^8.5.6",
     "prettier": "^3.6.2",
     "tailwindcss": "^4.1.13",
+    "vue": "^3.5.22",
     "vue-eslint-parser": "^10.2.0"
   }
 }
