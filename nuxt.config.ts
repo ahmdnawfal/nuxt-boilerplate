@@ -5,13 +5,7 @@ export default defineNuxtConfig({
   compatibilityDate: '2025-05-15',
   devtools: { enabled: true },
   css: ['~/assets/css/main.css'],
-  modules: [
-    '@nuxt/eslint',
-    '@nuxt/image',
-    '@nuxt/fonts',
-    '@nuxt/icon',
-    '@pinia/nuxt',
-  ],
+  modules: ['@nuxt/eslint', '@nuxt/image', '@nuxt/fonts', '@pinia/nuxt'],
   fonts: {
     provider: 'google',
     experimental: { processCSSVariables: true, disableLocalFallbacks: false },

@@ -1,6 +1,4 @@
 <script setup lang="ts">
-import { Button } from '~/components/ui';
-
 const router = useRouter();
 const navigateTo = (path: string) => {
   router.push(path);
@@ -113,10 +111,10 @@ const navigateTo = (path: string) => {
       </ul>
 
       <div class="mt-8 flex justify-center gap-4">
-        <Button size="md" @click="navigateTo('/posts')">Go to CSR Page</Button>
-        <Button size="md" variant="secondary" @click="navigateTo('/users')"
-          >Go to SSR Page</Button
-        >
+        <button size="md" @click="navigateTo('/posts')">Go to CSR Page</button>
+        <button size="md" variant="secondary" @click="navigateTo('/users')">
+          Go to SSR Page
+        </button>
       </div>
     </div>
   </div>
